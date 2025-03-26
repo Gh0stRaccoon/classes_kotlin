@@ -99,7 +99,7 @@ fun main() {
         - "Ha-ha-ha, simple-hearted nobleman! We’ll see about that..."
     """.trimIndent(),
     )
-    val history: History = History(historyParts)
+    val history = History(historyParts)
 
     history.play()
 }

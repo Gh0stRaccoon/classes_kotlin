@@ -3,7 +3,7 @@ package org.example
 class Student(val name: String, val lastname: String, var age: String, var grade: String) {
     val fullName: String
         get() {
-            val fullName: String = "$name $lastname"
+            val fullName = "$name $lastname"
             return fullName
         }
 
