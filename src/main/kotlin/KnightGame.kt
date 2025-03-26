@@ -1,10 +1,10 @@
 package org.example
 
-class History(val parts: List<String>) {
+class History(private val parts: List<String>) {
     private val knight: Fighter = Warrior(name = "Thor")
     private val warrior: Fighter = Knight(name = "Hollow")
 
-    val game = Game(knight, warrior)
+    private val game = Game(knight, warrior)
 
     fun play() {
         for (part in parts) {
