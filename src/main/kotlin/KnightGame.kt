@@ -1,8 +1,8 @@
 package org.example
 
 class History(private val parts: List<String>) {
-    private val knight: Fighter = Warrior(name = "Thor")
-    private val warrior: Fighter = Knight(name = "Hollow")
+    private val knight: Fighter1 = Warrior(name = "Thor")
+    private val warrior: Fighter1 = Knight(name = "Hollow")
 
     private val game = Game(knight, warrior)
 
@@ -16,12 +16,12 @@ class History(private val parts: List<String>) {
     }
 }
 
-interface Fighter {
+interface Fighter1 {
     val name: String
     var health: Int
     val attack: Int
     val isAlive: Boolean
-    fun attackAction(target: Fighter) {
+    fun attackAction(target: Fighter1) {
         val attackSuccess = Math.random() > 0.3
         val isCriticalHit = Math.random() > 0.7
         val calculatedAttack = if (isCriticalHit) (attack * 1.3).toInt() else attack
@@ -43,14 +43,14 @@ open class Warrior(
     override val name: String,
     override var health: Int = 50,
     override val attack: Int = 5
-) : Fighter {
+) : Fighter1 {
     override val isAlive: Boolean
         get() = health > 0
 }
 
 class Knight(name: String) : Warrior(name, attack = 7)
 
-class Game(private var player1: Fighter, private var player2: Fighter) {
+class Game(private var player1: Fighter1, private var player2: Fighter1) {
     fun fight() {
         while (player1.isAlive && player2.isAlive) {
             player1.attackAction(player2)
